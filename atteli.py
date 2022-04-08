@@ -1,6 +1,7 @@
 # importing the tkinter module and PIL
 # that is pillow module
-from ctypes import alignment, resize
+#from ctypes import alignment, resize
+#from sqlite3 import PARSE_DECLTYPES
 from tkinter import *
 from PIL import ImageTk, Image
 
@@ -89,10 +90,15 @@ def back(img_no):
 
 
 root = Tk()
-root.resizable(0, 0)
+root.resizable(1,1)
 root.title("Attēlu apskatītājs")
+#root.grid(padx=10, pady=10)
 
 root.geometry("700x450")
+
+
+#frame=Frame(root, width=600, height=500, bg='white', relief=GROOVE, bd=2)
+#frame.pack(padx=10, pady=10)
 
 image_no_1 = ImageTk.PhotoImage(Image.open("11.jpg"))
 image_no_2 = ImageTk.PhotoImage(Image.open("22.jpg"))
@@ -105,8 +111,8 @@ image_no_8 = ImageTk.PhotoImage(Image.open("88.jpg"))
 
 List_images = [image_no_1, image_no_2, image_no_3, image_no_4, image_no_5, image_no_6, image_no_7, image_no_8]
 label = Label(image=image_no_1)
-
-label.grid(row=1, column=0, columnspan=3)
+label.grid(padx=(100, 100), pady=(0, 0))
+#label.grid(row=1, column=0, columnspan=3)
 
 
 #     POGAS
